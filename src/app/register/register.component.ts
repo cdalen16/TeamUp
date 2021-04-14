@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {AbstractControl, FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { first } from 'rxjs/operators';
 
 import { NotificationService } from '../_services/notification.service';
@@ -47,8 +47,9 @@ export class RegisterComponent implements OnInit {
       password: ['', [Validators.required, Validators.minLength(6)]],
       verifypassword: ['', [Validators.required, Validators.minLength(6)]],
       // tslint:disable-next-line:no-bitwise
-      avatarcolor: (Math.random() * 0xFFFFFF << 0).toString(16).padStart(6, '0')
-    });
+      avatarcolor: (Math.random() * 0xFFFFFF << 0).toString(16).padStart(6, '0')},
+      {validator: checkIfEndDateAfterStartDate }
+    );
     this.roles = [{name: 'User'},
       {name: 'Admin'}];
   }
@@ -79,4 +80,18 @@ export class RegisterComponent implements OnInit {
           this.loading = false;
         });
   }
+}
+
+export function checkIfEndDateAfterStartDate(c: AbstractControl) {
+  //safety check
+  console.log(c.get('password').value);
+  if (c.get('password').value === c.get('verifypassword').value) { return null; } else {
+    return { invalidpassword: true };
+  }
+  // carry out the actual date checks here for is-endDate-after-startDate
+
+  // if valid, return null,
+  // if invalid, return an error object (any arbitrary name), like, return { invalidEndDate: true }
+  // tslint:disable-next-line:max-line-length
+  // make sure it always returns a 'null' for valid or non-relevant cases, and a 'non-null' object for when an error should be raised on the formGroup
 }

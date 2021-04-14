@@ -61,10 +61,10 @@ export class LoginComponent {
         });
   }
 
-  register() {
-
-    this.notif.notImplementedWarning('Registration', 500);
-  }
+  // register() {
+  //
+  //   this.notif.notImplementedWarning('Registration', 500);
+  // }
 }
 
 

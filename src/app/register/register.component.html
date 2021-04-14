@@ -70,10 +70,10 @@
       <div class="textFeature2">
         Verify Password:
         <mat-form-field>
-          <input matInput placeholder="Verify Password" type="password" formControlName="password" class="form-control"
-                 [ngClass]="{ 'is-invalid': submitted && f.verifypassword.errors}">
-          <mat-hint *ngIf="submitted && f.verifypassword.errors" >
-            <mat-hint *ngIf="f.verifypassword.errors.required">password is required</mat-hint>
+          <input matInput placeholder="Verify Password" type="password" formControlName="verifypassword" class="form-control"
+                 [ngClass]="{ 'is-invalid': submitted && (f.verifypassword.errors || f.verifypassword.value != f.password.value) }">
+          <mat-hint *ngIf="submitted && (f.verifypassword.errors || f.verifypassword.value != f.password.value)" >
+            <mat-hint *ngIf="f.verifypassword.errors.required">Password is required</mat-hint>
             <mat-hint *ngIf="f.verifypassword.errors.minlength">Password must be at least 6 characters.</mat-hint>
             <mat-hint *ngIf="f.verifypassword.value != f.password.value">Passwords do not match</mat-hint>
           </mat-hint>
