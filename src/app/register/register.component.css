@@ -1,0 +1,43 @@
+html,
+body {
+  margin: 0px;
+  height: 100%;
+  background: midnightblue;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+}
+.box {
+  position: fixed;
+  height: 700px;
+  width: 370px;
+  top: 50%;
+  left: 50%;
+  margin-top: -350px;
+  margin-left: -185px;
+  /* bring your own prefixes */
+  /*transform: translate(-50%, -50%);*/
+}
+
+.textFeature {
+  font-size: xxx-large;
+  color: white;
+  font-family: 'Apple Chancery', cursive;
+  padding-left: 5vh;
+}
+
+.textFeature2 {
+  font-size: large;
+  color: white;
+  font-family: 'Courier New', monospace;
+  float: right;
+  clear: right;
+}
+/*.formspace1 {*/
+/*  padding-left: 6vh;*/
+/*}*/
+/*.formspace2 {*/
+/*  padding-left: 1vh;*/
+/*}*/

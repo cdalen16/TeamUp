@@ -1,0 +1,30 @@
+
+<body>
+<div class="box">
+  <p class="textFeature">TeamUp</p>
+  <p class="textFeature2">
+    Username:
+    <mat-form-field appearance="legacy">
+      <mat-label>Enter your username</mat-label>
+      <input type="text" matInput [(ngModel)]='username'  placeholder="" >
+
+    </mat-form-field>
+  </p>
+
+  <p class="textFeature2">
+    Password:
+    <mat-form-field appearance="standard">
+      <mat-label>Enter your password</mat-label>
+      <input matInput type="password" [(ngModel)]='password' placeholder="" >
+    </mat-form-field>
+  </p>
+
+  <mat-card-actions>
+    <button class="buttonspace" mat-button [disabled]="loading" (click)="login()">Login</button>
+    <button class="buttonspace" mat-button routerLink="/register" (click)="register()">Register</button>
+
+  </mat-card-actions>
+</div>
+
+
+</body>

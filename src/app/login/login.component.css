@@ -1,0 +1,47 @@
+.login-card{
+
+  display: flex;
+  height: 300px;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.textFeature {
+  font-size: xxx-large;
+  color: white;
+  font-family: 'Apple Chancery', cursive;
+  padding-left: 5vh;
+}
+
+.textFeature2 {
+  font-size: large;
+  color: white;
+  font-family: 'Courier New', monospace;
+}
+.buttonspace {
+  font-size: large;
+  color: white;
+  font-family: 'Courier New', monospace;
+  padding-left: 5vh;
+}
+
+
+html,
+body {
+  margin: 0px;
+  height: 100%;
+  background: midnightblue;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+}
+.box {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
+}
