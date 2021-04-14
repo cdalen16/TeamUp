@@ -46,11 +46,12 @@ export class RegisterComponent implements OnInit {
       username: ['', [Validators.required, Validators.pattern('^[a-zA-Z]+$')]],
       password: ['', [Validators.required, Validators.minLength(6)]],
       verifypassword: ['', [Validators.required, Validators.minLength(6)]],
+      bio: ['', [Validators.required]],
       // tslint:disable-next-line:no-bitwise
       avatarcolor: (Math.random() * 0xFFFFFF << 0).toString(16).padStart(6, '0')},
       {validator: checkIfPasswordsMatch }
     );
-    this.roles = [{name: 'User'},
+    this.roles = [{name: 'Student'},
       {name: 'Admin'}];
   }
 
@@ -83,7 +84,6 @@ export class RegisterComponent implements OnInit {
 }
 
 export function checkIfPasswordsMatch(c: AbstractControl) {
-  console.log(c.get('password').value);
   if (c.get('password').value === c.get('verifypassword').value) { return null; } else {
     return { invalidpassword: true };
   }

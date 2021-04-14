@@ -80,6 +80,18 @@
         </mat-form-field>
       </div>
 
+      <div class="textFeature2">
+        Username:
+        <mat-form-field>
+          <input matInput placeholder="Bio" type="text" formControlName="bio" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.bio.errors }">
+          <mat-hint *ngIf="submitted && f.bio.errors" >
+            <mat-hint *ngIf="f.username.errors.required">bio is required</mat-hint>
+<!--            <mat-hint *ngIf="f.username.errors.pattern">bio is using illegal characters.</mat-hint>-->
+          </mat-hint>
+        </mat-form-field>
+
+      </div>
+
 
       <div class="textFeature2">
         Role:

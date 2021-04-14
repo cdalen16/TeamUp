@@ -4,8 +4,7 @@ export class User {
   username: string;
   role: Role;
   token?: string;
-  caloriegoal: number;
-  minutegoal: number;
+  bio: string;
   firstName: string;
   lastName: string;
   avatarcolor: string;
