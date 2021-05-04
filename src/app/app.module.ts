@@ -14,6 +14,8 @@ import { RegisterComponent } from './register/register.component';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {JwtInterceptor} from './interceptors/jwt.interceptor';
 import {ErrorInterceptor} from './interceptors/error.interceptor';
+import { ChatroomComponent } from './chatroom/chatroom.component';
+import { ChatComponent } from './chat/chat.component';
 
 
 @NgModule({
@@ -22,7 +24,9 @@ import {ErrorInterceptor} from './interceptors/error.interceptor';
     LoginComponent,
     HomeComponent,
     AdminComponent,
-    RegisterComponent
+    RegisterComponent,
+    ChatroomComponent,
+    ChatComponent
   ],
   imports: [
     BrowserModule,

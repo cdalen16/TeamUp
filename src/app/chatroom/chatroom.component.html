@@ -1,0 +1,26 @@
+<!--<div class="pa-record-container">-->
+
+<!--  <parecord-component class="card-item" *ngFor="let parecord of parecords" [parecord]="parecord" (deleteEvent) = "deletePARecord($event)"></parecord-component>-->
+
+<!--  &lt;!&ndash;<div *ngFor="let parecord of parecords">{{parecord}}</div>&ndash;&gt;-->
+
+
+<!--</div>-->
+<p class="textFeature">Chat Room</p>
+
+<div class="pa-record-container">
+
+  <chat-component class="card-item" *ngFor="let chatrecord of chatArray" [chatrecord]="chatrecord" ></chat-component>
+
+</div>
+
+<p class="textFeature2">
+
+  Message:
+  <mat-form-field appearance="legacy">
+
+    <mat-label>Enter a message</mat-label>
+    <input type="text" matInput [(ngModel)]='nmessage'  placeholder="" >
+    <button class="buttonspace" mat-button (click)="sendMessage()">Send</button>
+  </mat-form-field>
+</p>
