@@ -24,7 +24,7 @@ export class ChatroomComponent implements OnInit {
   }
 
   sendMessage(nmessage: string) {
-    let nDate = new Date();
+    const nDate = new Date();
     let currUser;
     this.authService.currentUser.subscribe(user => currUser = user);
     const chat = {
@@ -39,6 +39,9 @@ export class ChatroomComponent implements OnInit {
 
     this.chatService.sendChat(chat).subscribe(() => this.loadMessages());
 
+  }
+  capitalizeFirstLetter(name: string) {
+    return name.charAt(0).toUpperCase() + name.slice(1);
   }
 
 }

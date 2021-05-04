@@ -1,24 +1,3 @@
-<!--<div class = "box">-->
-<!--  <p class="textFeature">Chat Room</p>-->
-
-<!--  <div class="pa-record-container">-->
-
-<!--    <chat-component class="card-item" *ngFor="let chatrecord of chatArray" [chatrecord]="chatrecord" ></chat-component>-->
-
-<!--  </div>-->
-
-<!--  <p class="textFeature2">-->
-
-<!--    Message:-->
-<!--    <mat-form-field appearance="legacy">-->
-
-<!--      <mat-label>Enter a message</mat-label>-->
-<!--      <input type="text" matInput [(ngModel)]='nmessage'  placeholder="" >-->
-<!--      <button class="buttonspace" mat-button (click)="sendMessage()">Send</button>-->
-<!--    </mat-form-field>-->
-<!--  </p>-->
-<!--</div>-->
-
 
 <ol class="chat" #scrollMe [scrollTop]="scrollMe.scrollHeight" *ngIf="chatArray.length > 0">
   <li *ngFor="let chat of chatArray">
@@ -26,7 +5,9 @@
          id="avatar" alt="Avatar">
     <div class="msg">
       <div class="user">
-        {{chat.firstName}} {{chat.lastName}}<span class="range admin">{{chat.role}}</span></div>
+        {{capitalizeFirstLetter(chat.firstName)}} {{capitalizeFirstLetter(chat.lastName)}}
+        <span class="range admin">{{chat.role}}</span>
+      </div>
       <p> {{ chat.message }} </p>
       <time>{{ chat.date }}</time>
     </div>
@@ -37,9 +18,6 @@
   <form>
     <textarea type="text" #msgInput (keydown.enter)="sendMessage(msgInput.value);false;msgInput.value='';"
               placeholder="Enter message...">
-
-    </textarea><input type="submit" class="send" value=""/>
+    </textarea>
   </form>
-
-  <div class="emojis"></div>
 </div>
