@@ -6,4 +6,6 @@ export class Chat {
   message: string;
   firstName: string;
   lastName: string;
+  avatarcolor: string;
+  date: string;
 }

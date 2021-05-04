@@ -12,13 +12,16 @@ export class ChatComponent implements OnInit {
 
   message = '';
   username = '';
+  first = '';
+  last = '';
 
   constructor() { }
 
   ngOnInit() {
     this.message = this.chatrecord.message;
     this.username = this.chatrecord.username;
-
+    this.first = this.chatrecord.firstName;
+    this.last = this.chatrecord.lastName;
   }
 
 }

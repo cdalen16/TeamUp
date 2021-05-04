@@ -10,7 +10,7 @@ import {Chat} from '../_models/chat';
 })
 export class ChatroomComponent implements OnInit {
 
-  nmessage: string;
+  // nmessage = '';
   chatArray: Chat[];
 
   constructor(private chatService: ChatService, private authService: AuthService) { }
@@ -23,7 +23,8 @@ export class ChatroomComponent implements OnInit {
     this.chatService.getAll().subscribe(chats => this.chatArray = chats);
   }
 
-  sendMessage() {
+  sendMessage(nmessage: string) {
+    let nDate = new Date();
     let currUser;
     this.authService.currentUser.subscribe(user => currUser = user);
     const chat = {
@@ -31,11 +32,12 @@ export class ChatroomComponent implements OnInit {
       firstName: currUser.firstName,
       lastName: currUser.lastName,
       role: currUser.role,
-      message: this.nmessage
+      avatarcolor: currUser.avatarcolor,
+      message: nmessage,
+      date: nDate.toDateString() + ' at ' + nDate.getHours() + ':' + nDate.getMinutes()
     };
 
-    this.chatService.sendChat(chat).subscribe(() =>
-    this.loadMessages());
+    this.chatService.sendChat(chat).subscribe(() => this.loadMessages());
 
   }
 
