@@ -15,6 +15,10 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {JwtInterceptor} from './interceptors/jwt.interceptor';
 import {ErrorInterceptor} from './interceptors/error.interceptor';
 import { ChatroomComponent } from './chatroom/chatroom.component';
+import { AddteamComponent } from './addteam/addteam.component';
+import { TeamcardComponent } from './teamcard/teamcard.component';
+import { MemberComponent } from './member/member.component';
+import { EditComponent } from './edit/edit.component';
 
 
 @NgModule({
@@ -24,7 +28,11 @@ import { ChatroomComponent } from './chatroom/chatroom.component';
     HomeComponent,
     AdminComponent,
     RegisterComponent,
-    ChatroomComponent
+    ChatroomComponent,
+    AddteamComponent,
+    TeamcardComponent,
+    MemberComponent,
+    EditComponent
   ],
   imports: [
     BrowserModule,

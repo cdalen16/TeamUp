@@ -1,6 +1,16 @@
-<div class="pa-record-container">
+<mat-form-field class="filter">
+  <input matInput placeholder="Search for team name/course" type="text" [ngModel]="filterStr" (ngModelChange)="filter($event)">
+</mat-form-field>
 
-<!--  <parecord-component class="card-item" *ngFor="let parecord of parecords" [parecord]="parecord" (deleteEvent) = "deletePARecord($event)"></parecord-component>-->
+<mat-radio-group aria-label="Select an option">
+  <mat-radio-button (click)="show(1, currentUser)" value="1">Show All Teams.</mat-radio-button>
+  <mat-radio-button (click)="show(2, currentUser)" value="2">Show Unfull Teams Only.</mat-radio-button>
+  <mat-radio-button (click)="show(3, currentUser)" value="3">Show My Teams Only.</mat-radio-button>
+</mat-radio-group>
+
+<div class="team-container">
+
+  <app-teamcard class="card-item" *ngFor="let team of teams" [team]="team" (deleteEvent) = "deleteTeam($event)"></app-teamcard>
 
 <!--<div *ngFor="let parecord of parecords">{{parecord}}</div>-->
 
@@ -9,7 +19,7 @@
 
 <div class="fab-container">
 <!--  <button mat-flat-button color="primary"  matTooltip="Add new class" (click)="createPARecord()">-->
-  <button mat-flat-button color="primary"  matTooltip="Add new class"  routerLink="/create">
+  <button mat-flat-button color="primary"  matTooltip="Add new team"  routerLink="/addteam">
   <i class="material-icons">add</i>
   </button>
 </div>

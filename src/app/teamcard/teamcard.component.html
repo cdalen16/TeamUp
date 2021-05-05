@@ -1,0 +1,42 @@
+<mat-card class="team-card">
+<!--  <div class="members-container">-->
+<!--    <app-member class="card-item" *ngFor="let member of members; let memi = index" [memi]="memi" [member]="member">-->
+
+<!--    </app-member>-->
+<!--  </div>-->
+
+  <div class="tnamet">Team Name: {{team.teamName}}</div>
+  <div class="classt">Course: {{team.class}}</div>
+  <div class="mt">Team Members: {{memStr}}</div>
+  <div class="sizet">Team Size: Current: {{team.teamSize}}/ Max: {{team.teamCap}}</div>
+  <div class="dest">Team Description: {{team.description}}</div>
+
+  <div class="menu">
+    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Delete or edit">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+
+      <button mat-menu-item [routerLink]="['/edit', this.team.class, this.team.teamName, this.team.teamCap, this.team.description]" (click)="goToEdit()">
+
+        <mat-icon>edit</mat-icon>
+        <span>Edit</span>
+      </button>
+      <button mat-menu-item (click)="delete(team.createdDate)">
+        <mat-icon>delete</mat-icon>
+        <span>Delete</span>
+      </button>
+    </mat-menu>
+  </div>
+  <div class="join">
+    <button mat-button *ngIf="team.teamSize != team.teamCap" aria-label="Join" (click)="join()">
+      <mat-icon>input</mat-icon>
+      <span> <b> Join this team</b></span>
+    </button>
+    <button mat-button *ngIf="team.teamSize === team.teamCap" aria-label="FULL">
+<!--      <mat-icon></mat-icon>-->
+      <span> <b> FULL </b></span>
+    </button>
+
+  </div>
+</mat-card>

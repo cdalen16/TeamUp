@@ -7,11 +7,14 @@ import {AdminComponent} from './admin/admin.component';
 import {RegisterComponent} from './register/register.component';
 import {Role} from './_models/role';
 import {ChatroomComponent} from './chatroom/chatroom.component';
+import {AddteamComponent} from "./addteam/addteam.component";
+import {EditComponent} from "./edit/edit.component";
 
 const routes: Routes = [{path: '', component: HomeComponent, canActivate: [AuthGuard]}, {path: 'login', component: LoginComponent},
   { path: 'register', component: RegisterComponent },
   {path: 'admin', component: AdminComponent, canActivate: [AuthGuard], data: { roles: [Role.admin]}},
-  { path: 'chat', component: ChatroomComponent },
+  { path: 'chat', component: ChatroomComponent }, { path: 'addteam', component: AddteamComponent},
+  { path: 'edit/:class/:name/:cap/:des', component: EditComponent},
   { path: '**', redirectTo: '' }];
 
 @NgModule({

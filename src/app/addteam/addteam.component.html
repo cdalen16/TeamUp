@@ -1,0 +1,67 @@
+<link rel="stylesheet" href="http://localhost/src/app/addteam/addteam.component.css">
+
+<form [formGroup]="teamForm" (ngSubmit)="onSubmit()">
+  <mat-card class="registration-card">
+    <mat-card-header>
+
+      <mat-card-title>Create a New Team</mat-card-title>
+
+    </mat-card-header>
+
+    <mat-card-content>
+
+      <div class="form-group">
+        <mat-form-field>
+          <input matInput placeholder="Class Name" type="text" formControlName="class" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.class.errors }">
+          <mat-hint *ngIf="submitted && f.class.errors" >
+            <mat-hint *ngIf="f.class.errors.required">Class Name is required</mat-hint>
+            <mat-hint *ngIf="f.class.errors.pattern">Class name should be in a format like CS 3754</mat-hint>
+          </mat-hint>
+        </mat-form-field>
+      </div>
+
+      <div class="form-group">
+        <mat-form-field>
+          <input matInput placeholder="Team Name" type="text" formControlName="teamName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.teamName.errors }">
+          <mat-hint *ngIf="submitted && f.teamName.errors" >
+            <mat-hint *ngIf="f.teamName.errors.required">Team Name is required</mat-hint>
+            <mat-hint *ngIf="f.teamName.errors.pattern">Team Name is using illegal characters.</mat-hint>
+          </mat-hint>
+        </mat-form-field>
+      </div>
+
+
+      <div class="form-group">
+        <mat-form-field>
+          <input matInput placeholder="Team Description" type="text" formControlName="description" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.description.errors }">
+          <mat-hint *ngIf="submitted && f.description.errors" >
+            <mat-hint *ngIf="f.description.errors.required">Team Description is required</mat-hint>
+            <mat-hint *ngIf="f.description.errors.pattern">Team Description is typed with errors.</mat-hint>
+          </mat-hint>
+        </mat-form-field>
+      </div>
+
+      <div class="form-group">
+        <mat-form-field>
+          <input matInput placeholder="Max. team size" type="text" formControlName="teamCap" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.teamCap.errors }">
+          <mat-hint *ngIf="submitted && f.teamCap.errors" >
+            <mat-hint *ngIf="f.teamCap.errors.required">Team Max. Size is required</mat-hint>
+            <mat-hint *ngIf="f.teamCap.errors.pattern">Team Max. Size is typed with errors. (It has to be between 2-8). </mat-hint>
+          </mat-hint>
+        </mat-form-field>
+      </div>
+
+
+
+    </mat-card-content>
+    <mat-card-actions>
+
+      <button mat-button [disabled]="loading" >Add</button>
+      <!--      <img class="pl-3" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />-->
+      <button mat-button  routerLink="/home" >Cancel</button>
+      <mat-spinner  *ngIf="loading" [diameter]="30"></mat-spinner>
+
+    </mat-card-actions>
+  </mat-card>
+
+</form>
