@@ -11,10 +11,11 @@ import {User} from '../_models/user';
 export class UserService {
 
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+  }
 
   getAll() {
-     return this.http.get<User[]>(`http://localhost:3030/user/allusers`);
+    return this.http.get<User[]>(`http://localhost:3030/user/allusers`);
   }
 
   getUser(name: string) {
@@ -24,13 +25,13 @@ export class UserService {
   register(user: User) {
     return this.http.post(`http://localhost:3030/user/register`, user);
   }
-  //
-  // changeGoals(values) {
-  //   console.log(values);
-  //   return this.http.post(`http://localhost:3030/user/setgoals`, values);
-  // }
-  //
-  // getGoals(username: string) {
-  //   return this.http.get<number[]>(`http://localhost:3030/user/getgoals${username}`);
-  // }
+
+  changePass(value) {
+    console.log(value);
+    return this.http.post(`http://localhost:3030/user/changepass`, value);
+  }
+  changeBio(value) {
+    console.log(value);
+    return this.http.post(`http://localhost:3030/user/changebio`, value);
+  }
 }

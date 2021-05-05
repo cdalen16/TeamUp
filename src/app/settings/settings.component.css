@@ -1,0 +1,84 @@
+.setting-card {
+  height:250px !important;
+  width:800px !important;
+  font-size:32px !important;
+  font-weight: bold;
+}
+.setting-card2 {
+  display: inline-block;
+  height:125px !important;
+  width:800px !important;
+}
+
+.main-div{
+  height: 75px;
+  display: flex;
+  justify-content: center;
+}
+.main-div2{
+  height: 75px;
+  padding-top: 100px;
+  display: flex;
+  justify-content: center;
+}
+.main-div3{
+  height: 75px;
+  padding-top: 40px;
+  padding-bottom: 30px;
+  display: flex;
+  justify-content: center;
+}
+.center {
+  display: flex;
+  justify-content: center;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 25px;
+}
+
+.slider {
+  padding-right: 40px;
+  height: 175px;
+  width: 100px;
+}
+.save-button {
+  color: deeppink;
+  font-size:18px !important;
+  width: 365px;
+}
+
+
+.pass1{
+  grid-area: pass1;
+}
+.pass2{
+  grid-area: pass2;
+}
+.passbut{
+  grid-area: passbut;
+}
+
+.bio{
+  grid-area: bio;
+}
+.nbio{
+  grid-area: nbio;
+}
+.biobut{
+  grid-area: biobut;
+}
+
+.setting-card{
+  display: grid;
+  grid-template-rows: 50px;
+  grid-template-column: 50px;
+  grid-template-areas:
+
+    "pass1"
+    "pass2"
+    "passbut"
+;
+}

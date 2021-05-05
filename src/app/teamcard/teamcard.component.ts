@@ -40,7 +40,7 @@ export class TeamcardComponent implements OnInit {
       }
     );
   }
-  updateMemStr(){
+  updateMemStr() {
     this.memStr = '';
     this.members = this.team.teamMembers;
     console.log(this.team.teamSize);

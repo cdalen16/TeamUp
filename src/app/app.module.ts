@@ -19,6 +19,7 @@ import { AddteamComponent } from './addteam/addteam.component';
 import { TeamcardComponent } from './teamcard/teamcard.component';
 import { MemberComponent } from './member/member.component';
 import { EditComponent } from './edit/edit.component';
+import { SettingsComponent } from './settings/settings.component';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { EditComponent } from './edit/edit.component';
     AddteamComponent,
     TeamcardComponent,
     MemberComponent,
-    EditComponent
+    EditComponent,
+    SettingsComponent
   ],
   imports: [
     BrowserModule,

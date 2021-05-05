@@ -1,0 +1,53 @@
+<!--<mat-card class="setting-card">-->
+  <div class="main-div2">
+    <p class="textFeature2">
+<!--          Enter New Password:-->
+  <mat-form-field class="pass1" appearance="standard">
+    <mat-label>Enter new password</mat-label>
+    <input matInput type="password" [(ngModel)]='newpass' placeholder="" >
+  </mat-form-field>
+</div>
+<!--</mat-card>-->
+
+
+
+<div class="main-div">
+  <p class="textFeature2">
+<!--    Verify New Password:-->
+    <mat-form-field appearance="standard">
+      <mat-label>Verify new password</mat-label>
+      <input matInput type="password" [(ngModel)]='verifypass' placeholder="" >
+    </mat-form-field>
+  </p>
+</div>
+
+<div class="main-div3">
+  <mat-card-actions>
+    <button class="buttonspace" mat-button (click)="changePass()">Update Password</button>
+    <!--  <button class="buttonspace" mat-button routerLink="/register">Register</button>-->
+  </mat-card-actions>
+</div>
+
+<div class="main-div">
+  <p class="textFeature2">
+    Current Bio:
+    {{currUser.bio}}
+  </p>
+</div>
+
+<div class="main-div">
+  <p class="textFeature2">
+
+    <mat-form-field appearance="standard">
+      <mat-label>Enter new bio</mat-label>
+      <input matInput type="text" [(ngModel)]='newbio' placeholder="Enter new bio..." >
+    </mat-form-field>
+  </p>
+</div>
+
+<div class="main-div3">
+  <mat-card-actions>
+    <button class="buttonspace" mat-button (click)="changeBio()">Update Bio</button>
+    <!--  <button class="buttonspace" mat-button routerLink="/register">Register</button>-->
+  </mat-card-actions>
+</div>
